@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.heading {
+    padding: 25px;
+}
+
+.chess-table {
+    margin: 25px;
+}
+
+.chess {
+    
+}
+
+.chess-row {
+    border: 1px solid black;
+    
+}
+
+.chess-cell {
+    border: 1px solid black;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+}
