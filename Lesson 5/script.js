@@ -1,42 +1,44 @@
+var letters = ['', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', ''];
+var blackPieces1 = ['8', '&#9820;', '&#9822;', '&#9821;', '&#9819;', '&#9818;', '&#9821;', '&#9822;', '&#9820;', '8'];
+var blackPieces2 = ['7', '&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;', '7'];
+var whitePieces1 = ['1', '&#9814;', '&#9816;', '&#9815;', '&#9813;', '&#9812;', '&#9815;', '&#9816;', '&#9814;', '1'];
+var whitePieces2 = ['2', '&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;', '2'];
+
 var chessDiv = document.querySelector("div.chess-table");
 var board = document.createElement("table");
 chessDiv.appendChild(board);
 board.className = "chess";
 
-for (i = 0; i < 10; i++) {
-    var row = document.createElement("tr");
-    board.appendChild(row);
+for (var i = 0, a = 9; i < 10, a >= 0; i++, a--) {
+    var row = board.insertRow(i);
     row.className = "chess-row";
-    row.setAttribute("id", i);
-    for (j = 0; j < 10; j++) {
-        var cell = document.createElement("td");
-        row.appendChild(cell);
+    for (var j = 0; j < 10; j++) {
+        var cell = row.insertCell(j);
         cell.className = "chess-cell";
-        cell.setAttribute("id", j);
+        switch (i) {
+            case 0:
+                cell.innerText = letters[j];
+                break;
+            case 1:
+                cell.innerHTML = blackPieces1[j];
+                break;
+            case 2:
+                cell.innerHTML = blackPieces2[j];
+                break;
+            case 7:
+                cell.innerHTML = whitePieces2[j];
+                break;
+            case 8:
+                cell.innerHTML = whitePieces1[j];
+                break;
+            case 9:
+                cell.innerText = letters[j];
+                break;
+            default:
+                if (j == 0 || j == 9) {
+                    cell.innerHTML = a;
+                }
+                break;
+        }
     }
 }
-
-// выбрать первую строку, 
-//в ней ячейки со вторую по девятую, 
-//проставить буквы от a до h;
-// перевернуть буквы на 90 градусов
-
-for (j = 1; j < 9; j++) {
-    var textRow = document.querySelectorAll("tr td")[j];
-    textRow.innerHTML = j;
-}
-
-// выбрать последнюю строку, в ней ячейки со вторую по девятую, проставить буквы от a до h
-
-
-// выбрать первые ячейки в каждой строке, начиная со второй ячейки, проставить цифры в порядке убывания от 8 до 1
-
-// выбрать последние ячейки в каждой строке, начиная со второй ячейки, проставить цифры в порядке убывания от 8 до 1; перевернуть буквы на 90 градусов
-
-// во вторую и восьмую строки проставить буквы / значки шахматных фигур
-
-// в третью и девятую строку проставить буквы / значки пешек
-
-// стилизовать ячейки:
-// в каждой четной строке чередование белых и черных клеток, начиная со второй
-// в каждой нечетной строке чередование черных и белых клеток, начиная со второй
