@@ -23,4 +23,5 @@ function changeBigPicture(eventObj) {
     }
 }
 
+
 window.onload = init;

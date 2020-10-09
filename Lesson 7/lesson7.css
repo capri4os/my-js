@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(images/bgi-snake-game.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#snake-field {
+    display: inline-block;
+}
+
+#snake-renew,
+#snake-start {
+    width: 140px;
+    padding: 13px;
+    color: black;
+    background-color:#d1e231;
+    text-align: center;
+    cursor: pointer;
+    float: left;
+    margin: 10px;
+    border: 2px solid #000;
+}
+
+.show-score {
+    margin-top: 10px;
+    color: #ff4040;
+}
+
+.game-table {
+    border-collapse: collapse;
+    background-color: #3e3e3e;
+}
+
+td.game-table-cell {
+    width: 15px;
+    height: 15px;
+    border: 1px dotted #eee;
+}
+
+.snake-unit {
+    background-color: #fff;
+}
+
+.food-unit {
+    background-color: #ff4040;
+}
+
+.bomb-unit {
+    background-image: url(images/bgi-bomb-snake-game.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-color: yellow; */
+}
+
+.buttons {
+    display: inline-block;
+}
+
+.wrap {
+    margin: 30px auto 0;
+    text-align: center;
+}
